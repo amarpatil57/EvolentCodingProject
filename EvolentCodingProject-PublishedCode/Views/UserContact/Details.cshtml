@@ -1,0 +1,75 @@
+﻿@model UserContactDemo.Models.UserContact
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<br />
+<br />
+<br />
+
+<h2>User Details</h2>
+
+<div>
+	<hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.C_First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_First_Name)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_ast_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_ast_Name)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone_Number)
+        </dd>
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @if (Convert.ToBoolean(Model.Status))
+            {
+                <span>Active</span>
+            }
+            else
+            {
+                <span>Inactive</span>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
